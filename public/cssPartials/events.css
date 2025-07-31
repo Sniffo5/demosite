@@ -1,0 +1,53 @@
+/* EVENTS START  */
+.events h2 {
+  text-align: center;
+  padding: 5%;
+  font-size: 3.5rem;
+}
+
+.event {
+  padding: 1.5%;
+  margin: auto;
+  margin-bottom: 1%;
+  width: 95vw;
+  max-height: 20vh;
+  background-color: #616162;
+  color: var(--textColor2);
+  display: flex;
+  border: 2px #0B090A solid;
+  position: relative;
+}
+
+.event>* {
+  display: inline-block;
+}
+
+.event img {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.event h4 {
+  position: absolute;
+  left: -webkit-calc(47.5vw - 26px);
+}
+
+.event .location>* {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.location {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.event h6 {
+  position: absolute;
+  top: 55%;
+  right: 10%;
+}
+
+/* EVENTS END  */

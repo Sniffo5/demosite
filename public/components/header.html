@@ -1,0 +1,103 @@
+<!-- Header -->
+  <header class="header-modern">
+    <div class="header-container">
+      <div class="header-content">
+        <div class="logo-container">
+          <a href="index.html">
+          <img src="https://placehold.co/180x60?text=Logo" alt="Placeholder Logo" class="logo">
+          </a>
+        </div>
+        <nav class="nav-desktop">
+          <a href="booksB.html" class="nav-link">Barnböcker</a>
+          <a href="booksV.html" class="nav-link">Romaner</a>
+          <a href="evenemang.html" class="nav-link">Evenemang</a>
+          <a href="omTherese.html" class="nav-link">Om Therese</a>
+          <a href="omTherese.html#lillyemme" class="nav-link">Lilly Emme?</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="booksB.html" class="mobile-nav-link">Barnböcker</a>
+      <a href="booksV.html" class="mobile-nav-link">Romaner</a>
+      <a href="evenemang.html" class="mobile-nav-link">Evenemang</a>
+      <a href="omTherese.html" class="mobile-nav-link">Om Therese</a>
+      <a href="omTherese.html#lillyemme" class="mobile-nav-link">Lilly Emme?</a>
+    </div>
+  </header>
+  
+  <script>
+    // Mobile menu logic for dynamically loaded header
+    (function() {
+      function resetHamburger(menuBtn) {
+        const lines = menuBtn.querySelectorAll('.hamburger-line');
+        if (lines.length === 3) {
+          lines[0].style.transform = 'none';
+          lines[1].style.opacity = '1';
+          lines[2].style.transform = 'none';
+        }
+      }
+
+      function animateHamburger(menuBtn) {
+        const lines = menuBtn.querySelectorAll('.hamburger-line');
+        if (lines.length === 3) {
+          lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+          lines[1].style.opacity = '0';
+          lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var menuBtn = document.getElementById('mobile-menu-toggle');
+        var menu = document.getElementById('mobile-menu');
+        if (!menuBtn || !menu) return;
+
+        menuBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = menu.classList.contains('active');
+          if (isOpen) {
+            menu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            resetHamburger(menuBtn);
+          } else {
+            menu.classList.add('active');
+            menuBtn.classList.add('active');
+            animateHamburger(menuBtn);
+          }
+        });
+
+        // Close menu when clicking a link
+        menu.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            resetHamburger(menuBtn);
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+            menu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            resetHamburger(menuBtn);
+          }
+        });
+
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            menu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            resetHamburger(menuBtn);
+          }
+        });
+      });
+    })();
+  </script>

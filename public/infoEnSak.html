@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>En sak i taget | Therese Loreskär</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cssPartials/infoMasoarna.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://unpkg.com/htmx.org@1.9.10" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="header" hx-get="components/header.html" hx-trigger="load" hx-target="#header" hx-swap="outerHTML"></div>
+  <main>
+    <div class="info-series-container">
+      <div class="info-series-title" style="margin-bottom:0.5rem;">En sak i taget</div>
+      <div class="info-series-author" style="margin-bottom:1.2rem;">av Therese Loreskär</div>
+      <div class="info-series-books-list">
+        <div class="info-book-details" style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:2.5rem;">
+          <img src="https://placehold.co/160x160?text=Book+Cover" alt="Book Cover" class="info-series-cover" style="width:160px;height:160px;flex-shrink:0;" />
+          <div style="flex:1;min-width:0;">
+            <div class="info-book-title" style="margin-bottom:0.3rem;">En sak i taget</div>
+            <div class="info-book-desc" style="margin-bottom:1.1rem;">
+              Hon har fyra barn, ett överfullt hus – och en hemlig plan att rensa ut både prylar och förväntningar.
+
+Grace Appleton är trött. Trött på dammråttor, plastleksaker och en man som tror att gamla sladdar är känslomässigt värdefulla. Medan Andrew vaktar sina staplar av "bra att ha"-saker, smyger Grace igång Operation Utrensning: en sak ut varje dag, inga nya in.
+
+Till sin förvåning börjar hon känna sig... lättare. Friare. Nästan som sig själv igen. Men hur länge kan hon hålla projektet hemligt – och vad händer när hon råkar slänga något riktigt viktigt?
+
+En rapp och relaterbar feelgoodkomedi om prylar, passion och att våga ta tillbaka sitt utrymme – både i hemmet och i livet.
+            </div>
+            <div class="info-book-actions">
+              <a target="_blank" href="https://www.storytel.com/se/books/en-sak-i-taget-1262263"><span class="material-symbols-outlined">headphones</span> Lyssna på Storytel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer" hx-get="components/footer.html" hx-trigger="load" hx-target="#footer" hx-swap="outerHTML"></div>
+</body>
+</html>

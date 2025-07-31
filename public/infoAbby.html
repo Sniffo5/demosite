@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abby | Therese Loreskär</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cssPartials/infoMasoarna.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://unpkg.com/htmx.org@1.9.10" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="header" hx-get="components/header.html" hx-trigger="load" hx-target="#header" hx-swap="outerHTML"></div>
+  <main>
+    <div class="info-series-container">
+      <div class="info-series-title" style="margin-bottom:0.5rem;">Abby</div>
+      <div class="info-series-author" style="margin-bottom:1.2rem;">av Therese Loreskär</div>
+      <div class="info-series-books-list">
+        <div class="info-book-details" style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:2.5rem;">
+          <img src="https://placehold.co/160x160?text=Book+Cover" alt="Book Cover" class="info-series-cover" style="width:160px;height:160px;flex-shrink:0;" />
+          <div style="flex:1;min-width:0;">
+            <div class="info-book-title" style="margin-bottom:0.3rem;">Abby</div>
+            <div class="info-book-desc" style="margin-bottom:1.1rem;">
+              I England bor nioåriga Abby, som ofta hamnar i trubbel och så kallade nästan-olyckor. När hennes mamma har dåliga dagar är det tufft där hemma, men det är inte helt lätt i skolan heller. Läraren mr Turtle skickar ofta iväg henne från lektionerna, och då tvingas hon sitta hos snälla skolsekreteraren mrs Williams i väntan på den läskiga rektorn, mr Crow.<br><br>
+              De dumma tjejerna, Keira och Lauren ställer jämt till det för Abby, och allt på skolan blir liksom bara fel. Skolinspektören är dessutom på skolan för att se över eventuella problem, som de gamla toaletterna. Men det kan man väl inte stänga ner en skola för? Abby kan inte börja på en ny skola för i så fall förlorar hon mrs Williams och då kommer hon gå under.<br><br>
+              Många tror att Abby inte kan göra något rätt. Men en dag får hon chansen att visa vad hon går för.
+            </div>
+            <div class="info-book-actions">
+              <a target="_blank" href="https://www.storytel.com/se/books/abby-1938820"><span class="material-symbols-outlined">headphones</span>Lyssna på Storytel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer" hx-get="components/footer.html" hx-trigger="load" hx-target="#footer" hx-swap="outerHTML"></div>
+</body>
+</html>

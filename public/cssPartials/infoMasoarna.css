@@ -1,0 +1,179 @@
+/* Info page for Måsöarna series */
+.info-series-container {
+  max-width: 900px;
+  margin: 3rem auto 2rem auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.info-series-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.info-series-cover {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.13);
+  object-fit: cover;
+  background: #f7f8fa;
+  border: 3px solid #fff;
+}
+.info-series-main {
+  flex: 1;
+  min-width: 220px;
+}
+.info-series-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4b9cd3;
+  margin-bottom: 0.5rem;
+}
+.info-series-author {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+.info-series-desc {
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+.info-series-books-nav {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.info-series-book-btn {
+  background: #eaf4fb;
+  color: #4b9cd3;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.info-series-book-btn.active, .info-series-book-btn:hover {
+  background: #4b9cd3;
+  color: #fff;
+}
+.info-book-details {
+  margin-top: 1.5rem;
+  background: #f7f8fa;
+  border-radius: 1rem;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.info-book-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+.info-book-desc {
+  font-size: 1.08rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+.info-book-actions {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+.info-book-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4b9cd3;
+  color: #fff;
+  border-radius: 2rem;
+  padding: 0.7rem 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.info-book-actions a:hover {
+  background: #357bb2;
+}
+.info-book-actions .material-symbols-outlined {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 700px) {
+  .info-series-container {
+    padding: 1.2rem 0.3rem 1rem 0.3rem;
+    border-radius: 0.7rem;
+    margin: 1.2rem 0.2rem 1rem 0.2rem;
+  }
+  .info-series-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .info-series-main {
+    min-width: 0;
+  }
+  .info-series-cover {
+    width: 120px;
+    height: 120px;
+    border-radius: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .info-series-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .info-series-author {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+  .info-series-desc {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .info-series-books-nav {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .info-series-book-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  .info-book-details {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+  }
+  .info-book-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .info-book-desc {
+    font-size: 0.98rem;
+    margin-bottom: 0.7rem;
+  }
+  .info-book-actions {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 0.3rem;
+    align-items: stretch;
+  }
+  .info-book-actions a {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.98rem;
+    padding: 0.6rem 0.5rem;
+  }
+}

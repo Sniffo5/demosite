@@ -1,0 +1,42 @@
+/*  NEW START */
+.new {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5vw 90vw;
+  border-top: 2px solid var(--textColor) ;
+  border-bottom: 2px solid var(--textColor) ;
+  background-color: #03535B;
+  text-align: center;
+}
+
+.new h2 {
+  grid-column-start: 2;
+  align-self: center;
+  font-size: 5rem;
+  margin: 0;
+  color: var(--textColor2);
+  max-height: 90px;
+  width: 80vw;
+  margin-bottom: 2vh;
+  overflow: hidden;
+}
+
+#imgNew {
+  aspect-ratio: 1807/2433;
+  width: 90vw;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+#linkNew {
+  grid-column-start: 2;
+  height: 100%;
+}
+
+.new .textRuta {
+  box-shadow: 6px 6px 9px #012124,
+    -6px -6px 9px #058592;
+  grid-column-start: 2;
+}
+
+/* NEW END */

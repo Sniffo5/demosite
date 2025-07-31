@@ -1,0 +1,638 @@
+/* Modern Adult Books Page Styling */
+:root {
+  --backgroundColor: #f7f8fa;
+  --backgroundColor2: #fff;
+  --accentColor: #ff5d73;
+  --accentColor2: #4b9cd3;
+  --textColor: #222;
+  --textColor2: #fff;
+  --cardShadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  --borderRadius: 18px;
+  --maxWidth: 1200px;
+  --fontMain: "Inter", "Segoe UI", "Roboto", "Arial", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.vuxen {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+  min-height: 100vh;
+  font-family: var(--fontMain);
+  line-height: 1.6;
+  color: var(--textColor);
+}
+
+/* Hero section for adult books */
+.adult-hero {
+  background: var(--accentColor2);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.adult-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.adult-hero-desc {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Series container */
+.seriesV {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 0 1rem 3rem 1rem;
+}
+
+/* Individual series styling */
+.series {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border-top: 4px solid var(--accentColor2);
+}
+
+.series:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.series-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--accentColor2);
+  margin-bottom: 1.2rem;
+  text-align: center;
+  position: relative;
+}
+
+.series-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 3px;
+  background: var(--accentColor);
+  border-radius: 2px;
+}
+
+.series-desc {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Book cards within series */
+.series .bokF {
+  background: #fafbfc;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.series .bokF:last-child {
+  margin-bottom: 0;
+}
+
+.series .bokF:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: var(--accentColor2);
+}
+
+/* Book image container */
+.bokF-image-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Book images - Much bigger */
+.bokF .imgRect,
+.bokF .imgSquare {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bokF .imgSquare {
+  height: 200px;
+  aspect-ratio: 1;
+}
+
+.bokF .imgRect:hover,
+.bokF .imgSquare:hover {
+  transform: scale(1.02);
+}
+
+/* Book number overlay - positioned at corner */
+.book-number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accentColor);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(255, 93, 115, 0.4);
+  z-index: 2;
+  border: 3px solid white;
+}
+
+/* Book content area */
+.bokF-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bokF h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--textColor);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.bokF p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+/* Action buttons - Fixed for ALL books regardless of structure */
+.lyssna,
+.bokF .lyssna,
+.series .bokF .lyssna,
+.standAloneV .bokF .lyssna {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Target ALL anchor tags in book cards, whether wrapped in .lyssna or not */
+.bokF a,
+.series .bokF a,
+.standAloneV .bokF a,
+.lyssna a,
+.bokF .lyssna a,
+.series .bokF .lyssna a,
+.standAloneV .bokF .lyssna a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 2rem !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Style material icons in ALL book buttons */
+.bokF a .material-symbols-outlined,
+.series .bokF a .material-symbols-outlined,
+.standAloneV .bokF a .material-symbols-outlined,
+.lyssna a .material-symbols-outlined,
+.bokF .lyssna a .material-symbols-outlined,
+.series .bokF .lyssna a .material-symbols-outlined,
+.standAloneV .bokF .lyssna a .material-symbols-outlined {
+  font-size: 1.4rem !important;
+  margin-right: 0.5rem !important;
+  color: white !important;
+}
+
+/* Shopping cart button - ALL instances */
+.bokF a[href*="adlibris"],
+.series .bokF a[href*="adlibris"],
+.standAloneV .bokF a[href*="adlibris"],
+.lyssna a[href*="adlibris"],
+.bokF .lyssna a[href*="adlibris"],
+.series .lyssna a[href*="adlibris"],
+.standAloneV .lyssna a[href*="adlibris"] {
+  background: var(--accentColor) !important;
+  color: white !important;
+  padding: 0.8rem 1.5rem !important;
+}
+
+.bokF a[href*="adlibris"]:hover,
+.series .bokF a[href*="adlibris"]:hover,
+.standAloneV .bokF a[href*="adlibris"]:hover,
+.lyssna a[href*="adlibris"]:hover,
+.bokF .lyssna a[href*="adlibris"]:hover,
+.series .lyssna a[href*="adlibris"]:hover,
+.standAloneV .lyssna a[href*="adlibris"]:hover {
+  background: #e54960 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(229, 73, 96, 0.3) !important;
+}
+
+/* Headphones button - ALL instances */
+.bokF a[href*="storytel"],
+.series .bokF a[href*="storytel"],
+.standAloneV .bokF a[href*="storytel"],
+.lyssna a[href*="storytel"],
+.bokF .lyssna a[href*="storytel"],
+.series .lyssna a[href*="storytel"],
+.standAloneV .lyssna a[href*="storytel"] {
+  background: var(--accentColor2) !important;
+  color: white !important;
+  padding: 0.8rem 1.5rem !important;
+}
+
+.bokF a[href*="storytel"]:hover,
+.series .bokF a[href*="storytel"]:hover,
+.standAloneV .bokF a[href*="storytel"]:hover,
+.lyssna a[href*="storytel"]:hover,
+.bokF .lyssna a[href*="storytel"]:hover,
+.series .lyssna a[href*="storytel"]:hover,
+.standAloneV .lyssna a[href*="storytel"]:hover {
+  background: #3a8bc2 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(75, 156, 211, 0.3) !important;
+}
+
+/* Info/Read more button - ALL instances */
+.bokF a.info,
+.series .bokF a.info,
+.standAloneV .bokF a.info,
+.lyssna .info,
+.bokF .lyssna .info,
+.series .bokF .lyssna .info,
+.standAloneV .bokF .lyssna .info,
+.bokF .info,
+.series .bokF .info,
+.standAloneV .bokF .info {
+  background: #6b7280 !important;
+  color: white !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 2rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.bokF a.info:hover,
+.series .bokF a.info:hover,
+.standAloneV .bokF a.info:hover,
+.lyssna .info:hover,
+.bokF .lyssna .info:hover,
+.series .bokF .lyssna .info:hover,
+.standAloneV .bokF .lyssna .info:hover,
+.bokF .info:hover,
+.series .bokF .info:hover,
+.standAloneV .bokF .info:hover {
+  background: var(--textColor) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3) !important;
+}
+
+.bokF a.info p,
+.series .bokF a.info p,
+.standAloneV .bokF a.info p,
+.lyssna .info p,
+.bokF .lyssna .info p,
+.series .bokF .lyssna .info p,
+.standAloneV .bokF .lyssna .info p,
+.bokF .info p,
+.series .bokF .info p,
+.standAloneV .bokF .info p {
+  margin: 0 !important;
+  color: white !important;
+  font-size: 0.95rem !important;
+}
+
+/* Standalone books section - Fixed structure */
+.standAloneV {
+  max-width: var(--maxWidth);
+  margin: 4rem auto 0 auto;
+  padding: 0 1rem 3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Style the title that's now in the HTML */
+.standAloneV .series-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--accentColor2);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  grid-column: 1 / -1; /* Make title span full width */
+}
+
+.standAloneV .series-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 3px;
+  background: var(--accentColor);
+  border-radius: 2px;
+}
+
+/* Individual book cards in standalone section */
+.standAloneV .bokF {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  border-top: 4px solid var(--accentColor2);
+}
+
+.standAloneV .bokF:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--accentColor2);
+}
+
+.standAloneV .bokF .imgRect {
+  width: 180px;
+  height: 240px;
+  margin-bottom: 1.5rem;
+}
+
+.standAloneV .bokF h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.standAloneV .bokF .lyssna {
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for series on scroll */
+.series {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.series:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.series:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.series:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.series:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.series:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.standAloneV .bokF {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.standAloneV .bokF:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.standAloneV .bokF:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.standAloneV .bokF:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .adult-hero {
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .seriesV {
+    padding: 0 0.5rem 2rem 0.5rem;
+  }
+
+  .series {
+    padding: 2rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .series .bokF {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .bokF .imgRect,
+  .bokF .imgSquare {
+    width: 180px;
+    height: 240px;
+  }
+
+  .bokF .imgSquare {
+    height: 180px;
+  }
+
+  .bokF-content {
+    align-items: center;
+  }
+
+  .bokF h3 {
+    text-align: center;
+  }
+
+  .lyssna {
+    justify-content: center;
+  }
+
+  .standAloneV {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .adult-hero {
+    padding: 2rem 1rem;
+  }
+
+  .series {
+    padding: 1.5rem 1rem;
+  }
+
+  .series .bokF {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .bokF .imgRect,
+  .bokF .imgSquare {
+    width: 160px;
+    height: 210px;
+  }
+
+  .bokF .imgSquare {
+    height: 160px;
+  }
+
+  .bokF h3 {
+    font-size: 1.5rem;
+  }
+
+  .lyssna {
+    gap: 1rem;
+  }
+
+  .book-number {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+
+  .standAloneV {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .standAloneV .bokF {
+    padding: 1.5rem;
+  }
+
+  .standAloneV .bokF .imgRect {
+    width: 160px;
+    height: 210px;
+  }
+}
+
+/* Focus styles for accessibility */
+.lyssna a:focus,
+.lyssna .info:focus {
+  outline: 2px solid var(--accentColor);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .adult-hero {
+    background: white !important;
+    color: black !important;
+    padding: 1rem;
+  }
+
+  .series,
+  .standAloneV .bokF {
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .lyssna {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .series {
+    border: 2px solid var(--textColor);
+  }
+
+  .bokF {
+    border: 1px solid var(--textColor);
+  }
+
+  .book-number {
+    border: 2px solid var(--textColor);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .series,
+  .standAloneV .bokF {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .bokF:hover,
+  .series:hover,
+  .lyssna a:hover {
+    transform: none;
+  }
+}
+.standAloneV .bokF a{
+  margin: 10px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tre hjärtan | Therese Loreskär</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cssPartials/infoMasoarna.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://unpkg.com/htmx.org@1.9.10" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="header" hx-get="components/header.html" hx-trigger="load" hx-target="#header" hx-swap="outerHTML"></div>
+  <main>
+    <div class="info-series-container">
+      <div class="info-series-title" style="margin-bottom:0.5rem;">Tre hjärtan</div>
+      <div class="info-series-author" style="margin-bottom:1.2rem;">av Therese Loreskär</div>
+      <div class="info-series-books-list">
+        <div class="info-book-details" style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:2.5rem;">
+          <img src="https://placehold.co/160x160?text=Book+Cover" alt="Book Cover" class="info-series-cover" style="width:160px;height:160px;flex-shrink:0;" />
+          <div style="flex:1;min-width:0;">
+            <div class="info-book-title" style="margin-bottom:0.3rem;">Tre hjärtan</div>
+            <div class="info-book-desc" style="margin-bottom:1.1rem;">
+              Wilma Sjögren har blivit kallad till anställningsintervju på Halmstads mest fashionabla spa Tre Hjärtan. Visst har hon hört ryktet om att den järnhårda affärskvinnan Feodora Ripa, som driver Tre Hjärtan, mutade sig till bygglovet när de tog över lokalerna till den gamla flickskolan från 1890-talet. Och hon vet mycket väl att de stora ombyggnaderna inte fallit kommuninvånarna i smaken. Men när Wilma blir erbjuden jobbet är det en chans hon inte vill missa, så hon tackar ja på stående fot.<br><br>
+Samtidigt driver damligan med Junis Carlsson i spetsen omkring på Tre Hjärtan. Damerna var alla elever på den gamla flickskolan och var starkt emot att spaet skulle öppna i den historiska byggnaden. Nu är de fast beslutna att sätta dit Feodora för bygglovsfusk, vilket visar sig vara svårare än de trott. Men de ger inte upp i första taget och planeringsmötena i ångbastun blir allt fler och fler, samtidigt som både Junis och Wilma ställs inför nya prövningar. Vem ska vinna slaget om Tre hjärtan?
+            </div>
+            <div class="info-book-actions">
+              <a target="_blank" href="https://www.storytel.com/se/books/tre-hj%C3%A4rtan-2123655"><span class="material-symbols-outlined">headphones</span> Lyssna på Storytel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer" hx-get="components/footer.html" hx-trigger="load" hx-target="#footer" hx-swap="outerHTML"></div>
+</body>
+</html>
